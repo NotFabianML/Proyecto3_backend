@@ -1,0 +1,35 @@
+# Nombre de tu aplicación Spring
+spring.application.name=<NOMBRE-DE-TU-APP>
+
+# --- Configuración de la Base de Datos (MariaDB) ---
+spring.datasource.url=jdbc:mariadb://localhost:<PUERTO-DE-TU-DB>
+spring.datasource.username=<USUARIO-DE-TU-DB>
+spring.datasource.password=<CONTRASENA-DE-TU-DB>
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+
+# --- Configuración de JPA/Hibernate ---
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+
+# --- Configuración de Seguridad y JWT ---
+# Es recomendable cambiar esta clave secreta por una generada por ti
+security.jwt.secret-key=3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+security.jwt.expiration-time=3600000 # 1 hora
+security.jwt.registration-expiration-time=900000 # 15 minutos
+
+# --- Configuración de SendGrid (para envío de correos) ---
+sendgrid.api.key=<TU-SENDGRID-API-KEY>
+sendgrid.from.email=<TU-EMAIL-DE-ENVIO@dominio.com>
+
+# --- Configuración de Together AI API ---
+together.api.model=<NOMBRE-DEL-MODELO-DE-TOGETHER-AI>
+together.api.key=<TU-TOGETHER-API-KEY>
+together.api.max_tokens=800
+
+# --- Configuración de Google OAuth2 ---
+google.client-id=<TU-GOOGLE-CLIENT-ID>
+google.client-secret=<TU-GOOGLE-CLIENT-SECRET>
+google.redirect-uri=http://localhost:4200/auth/callback
+google.token-uri=https://oauth2.googleapis.com/token
+google.user-info-uri=https://www.googleapis.com/oauth2/v3/userinfo
